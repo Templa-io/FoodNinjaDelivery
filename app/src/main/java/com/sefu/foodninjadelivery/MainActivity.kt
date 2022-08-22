@@ -15,6 +15,10 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.sefu.foodninjadelivery.screens.LogInScreen
+import com.sefu.foodninjadelivery.screens.MainScreen
+import com.sefu.foodninjadelivery.screens.StartScreenThree
+import com.sefu.foodninjadelivery.screens.StartScreenTwo
 import com.sefu.foodninjadelivery.ui.theme.FoodNinjaDeliveryTheme
 
 class MainActivity : ComponentActivity() {
@@ -23,7 +27,10 @@ class MainActivity : ComponentActivity() {
         setContent {
             FoodNinjaDeliveryTheme {
                 // A surface container using the 'background' color from the theme
-                StartScreen()
+//                StartScreen()
+//                StartScreenTwo()
+//                StartScreenThree()
+                MainScreen()
             }
         }
     }

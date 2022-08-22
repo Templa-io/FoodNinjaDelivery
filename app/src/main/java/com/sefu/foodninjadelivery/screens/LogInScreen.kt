@@ -153,6 +153,21 @@ fun LoginOptions(modifier: Modifier=Modifier) {
     Box(Modifier.fillMaxWidth()) {
         Column(modifier = Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.SpaceAround) {
             Text(text = "or Continue With", fontWeight = FontWeight.Bold)
+            Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceAround, verticalAlignment = Alignment.CenterVertically) {
+                Box(contentAlignment = Alignment.Center,modifier = Modifier
+                    .clip(shape = RoundedCornerShape(16.dp))
+                    .background(color = Color.White)
+                    .size(width = 100.dp, height = 50.dp)) {
+Text(text = "Facebook")
+                }
+                Box(contentAlignment = Alignment.Center,modifier = Modifier
+                    .clip(shape = RoundedCornerShape(16.dp))
+                    .background(color = Color.White)
+                    .size(width = 100.dp, height = 50.dp)) {
+Text(text = "Google")
+                }
+            }
+      Text(text = "forgot your password?")
         }
     }
 

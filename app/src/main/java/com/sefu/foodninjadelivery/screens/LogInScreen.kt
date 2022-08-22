@@ -2,16 +2,23 @@ package com.sefu.foodninjadelivery.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Icon
 import androidx.compose.material.Text
 import androidx.compose.material.TextField
 import androidx.compose.material.TextFieldDefaults
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.Search
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -26,7 +33,7 @@ fun MainScreen(modifier: Modifier=Modifier) {
     Column(
         modifier = modifier
             .fillMaxSize()
-            .background(color = Color.White)
+            .background(colorResource(id = R.color.background))
     ) {
 LogInScreen()
         LogInContent()
@@ -57,6 +64,9 @@ fun LogInScreen(modifier: Modifier=Modifier) {
                     )
                 )
         ) {
+            Column(modifier = Modifier.fillMaxSize(),horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.SpaceAround) {
+
+
             Image(
                 painter = painterResource(id = R.drawable.logo),
                 contentDescription = "",
@@ -64,50 +74,89 @@ fun LogInScreen(modifier: Modifier=Modifier) {
                 modifier = Modifier
                     .size(250.dp)
             )
-            Text(text = "LogIn To Your Account", fontSize = 24.sp, fontWeight = FontWeight.Bold, modifier = Modifier.align(alignment = Alignment.BottomCenter))
+           
+
+        Text(text = "LogIn To Your Account", fontSize = 24.sp, fontWeight = FontWeight.Bold)
+
+    }}}
+}
+
+@Composable
+fun LogInContent(modifier: Modifier=Modifier) {
+    Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.Center) {
+       Box() {
+            Column(modifier = Modifier.padding(horizontal=20.dp, vertical = 4.dp)) {
+        Box(
+            modifier = modifier
+                .clip(shape = RoundedCornerShape(12.dp))
+                .fillMaxWidth()
+                .height(50.dp)
+                .background(color = Color.White)
+        ) {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+
+                TextField(
+                    modifier = Modifier.fillMaxWidth(),
+                    colors = TextFieldDefaults.textFieldColors(
+                        textColor = Color.Transparent,
+                        disabledTextColor = Color.Transparent,
+                        backgroundColor = Color.Transparent,
+                        focusedIndicatorColor = Color.Transparent,
+                        unfocusedIndicatorColor = Color.Transparent,
+                        disabledIndicatorColor = Color.Transparent
+                    ),
+                    value = "", onValueChange = {}, placeholder = {
+                        Text(
+                            text = "Email", style = TextStyle(color = Color.LightGray)
+                        )
+                    })
+            }
         }
+        Spacer(modifier = Modifier.height(16.dp))
+        Box(
+            modifier = modifier
+                .clip(shape = RoundedCornerShape(12.dp))
+                .fillMaxWidth()
+                .height(50.dp)
+                .background(color = Color.White)
+        ) {
+            Row(modifier = Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
+
+                TextField(
+                    modifier = Modifier.fillMaxWidth(),
+                    colors = TextFieldDefaults.textFieldColors(
+                        textColor = Color.Transparent,
+                        disabledTextColor = Color.Transparent,
+                        backgroundColor = Color.Transparent,
+                        focusedIndicatorColor = Color.Transparent,
+                        unfocusedIndicatorColor = Color.Transparent,
+                        disabledIndicatorColor = Color.Transparent
+                    ),
+                    value = "", onValueChange = {}, placeholder = {
+                        Text(
+                            text = "Password",
+                            style = TextStyle(color = Color.LightGray),
+                            fontWeight = FontWeight.Bold
+                        )
+                    })
+            }}
+    }}
 
     }
 }
 
 @Composable
-fun LogInContent() {
-    Column() {
-
-
-        TextField(
-            modifier = Modifier.fillMaxWidth(),
-            colors = TextFieldDefaults.textFieldColors(
-                textColor = Color.Transparent,
-                disabledTextColor = Color.Transparent,
-                backgroundColor = Color.Transparent,
-                focusedIndicatorColor = Color.Transparent,
-                unfocusedIndicatorColor = Color.Transparent,
-                disabledIndicatorColor = Color.Transparent
-            ),
-            value = "", onValueChange = {}, placeholder = {
-                Text(
-                    text = "Email", style = TextStyle(color = Color.Gray)
-                )
-            })
-        TextField(
-            modifier = Modifier.fillMaxWidth(),
-            colors = TextFieldDefaults.textFieldColors(
-                textColor = Color.Transparent,
-                disabledTextColor = Color.Transparent,
-                backgroundColor = Color.Transparent,
-                focusedIndicatorColor = Color.Transparent,
-                unfocusedIndicatorColor = Color.Transparent,
-                disabledIndicatorColor = Color.Transparent
-            ),
-            value = "", onValueChange = {}, placeholder = {
-                Text(
-                    text = "Password", style = TextStyle(color = Color.Gray), fontWeight = FontWeight.Bold
-                )
-            })
+fun LoginOptions(modifier: Modifier=Modifier) {
+    Box(Modifier.fillMaxWidth()) {
+        Column(modifier = Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.SpaceAround) {
+            Text(text = "or Continue With", fontWeight = FontWeight.Bold)
+        }
     }
-}
 
+}
 
 
 
@@ -132,6 +181,14 @@ fun PreviewLogInScreen() {
 fun PreviewLogInContent() {
     FoodNinjaDeliveryTheme {
         LogInContent()
+    }
+}
+
+@Preview
+@Composable
+fun PreviewLoginOptions() {
+    FoodNinjaDeliveryTheme {
+        LoginOptions()
     }
 }
 

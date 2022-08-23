@@ -210,11 +210,20 @@ fun LoginOptions(modifier: Modifier = Modifier) {
 
                 }
             }
-            Text(text = "forgot your password?", fontSize = 16.sp, style = TextStyle(color = Color.Green))
+            Text(text = "forgot your password?", fontSize = 16.sp, style = TextStyle(colorResource(
+                id = R.color.dark_green
+            )))
             Box(
                 contentAlignment = Alignment.Center, modifier = Modifier
                     .clip(shape = RoundedCornerShape(16.dp))
-                    .background(color = Color.Green)
+                    .background(
+                        brush = Brush.linearGradient(
+                            colors = listOf(
+                                colorResource(id = R.color.light_green),
+                                colorResource(id = R.color.dark_green)
+                            )
+                        )
+                    )
                     .size(width = 150.dp, height = 50.dp)
             ) {
                 Text(text = "Login", fontSize = 20.sp, style = TextStyle(color = Color.White))

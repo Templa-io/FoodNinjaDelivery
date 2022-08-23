@@ -10,4 +10,10 @@
     <color name="background">#F4F4F4</color>
     <color name="light_green">#53E88B</color>
     <color name="dark_green">#15BE77</color>
+    <color name="baige">#DA6317</color>
+    <color name="Light_baige">#F9A84D</color>
+    <color name="dark_orange">#E86D28</color>
+    <color name="light_yellow">#F8D52B</color>
+
+
 </resources>

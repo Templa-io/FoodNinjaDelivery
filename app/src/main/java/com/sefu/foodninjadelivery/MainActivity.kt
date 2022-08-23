@@ -29,7 +29,12 @@ class MainActivity : ComponentActivity() {
 //                StartScreenThree()
 //                MainScreen()
 //                LogInScreen()
-            MainScreenTwo()
+//            MainScreenTwo()
+//                BioContent()
+//                PaymentInfo()
+//                PhotoContent()
+//                PhotoUploadScreen()
+                LocationScreen()
             }
         }
     }

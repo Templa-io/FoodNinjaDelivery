@@ -66,7 +66,7 @@ fun MethodScreen(modifier: Modifier = Modifier) {
                             fontWeight = FontWeight.Bold
                         )
                     }
-                    Text(text = "Select which contact detail we should\nwe use to reset your password ")
+                    Text(text = "Select which contact detail should we\nuse to reset your password ")
                     Column(
                         horizontalAlignment = Alignment.CenterHorizontally,
                         verticalArrangement = Arrangement.spacedBy(20.dp),

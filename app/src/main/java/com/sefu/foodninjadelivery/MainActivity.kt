@@ -34,7 +34,10 @@ class MainActivity : ComponentActivity() {
 //                PaymentInfo()
 //                PhotoContent()
 //                PhotoUploadScreen()
-                LocationScreen()
+//                LocationScreen()
+//                SuccessScreen()
+//                VerifyScreen()
+                MethodScreen()
             }
         }
     }

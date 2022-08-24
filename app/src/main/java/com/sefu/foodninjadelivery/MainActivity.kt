@@ -40,7 +40,8 @@ class MainActivity : ComponentActivity() {
 //                MethodScreen()
 //                PasswordContent()
 //                NotificationScreen()
-                HomeMainScreen()
+//                HomeMainScreen()
+                ExploreRestaurantScreen()
             }
         }
     }

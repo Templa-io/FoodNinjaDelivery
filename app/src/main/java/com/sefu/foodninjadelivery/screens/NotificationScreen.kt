@@ -41,7 +41,7 @@ fun NotificationScreen(modifier: Modifier=Modifier) {
         )
         Box(
             modifier = Modifier
-                .size(width = 400.dp, height = 400.dp)
+                .size(width = 400.dp, height = 500.dp).padding(top=60.dp)
                 .background(
                     brush = Brush.verticalGradient(
                         colors = listOf(
@@ -56,12 +56,13 @@ fun NotificationScreen(modifier: Modifier=Modifier) {
                 contentDescription = "",
 
                 modifier = Modifier
-                    .align(alignment = Alignment.BottomCenter)
-                    .size(200.dp)
+
+                    .align(alignment = Alignment.Center)
+                    .size(150.dp)
             )
         }
         Box(modifier = Modifier
-            .size(width = 400.dp, height = 300.dp)
+            .size(width = 400.dp, height = 200.dp)
             .align(alignment = Alignment.Center), contentAlignment = Alignment.BottomCenter) {
             Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(12.dp), modifier = Modifier.padding(16.dp)) {
                 Text(

@@ -41,7 +41,7 @@ fun SuccessScreen(modifier: Modifier = Modifier) {
         )
         Box(
             modifier = Modifier
-                .size(width = 400.dp, height = 400.dp)
+                .size(width = 400.dp, height = 500.dp).padding(top=60.dp)
                 .background(
                     brush = Brush.verticalGradient(
                         colors = listOf(
@@ -56,12 +56,13 @@ fun SuccessScreen(modifier: Modifier = Modifier) {
                 contentDescription = "",
 
                 modifier = Modifier
-                    .align(alignment = Alignment.BottomCenter)
-                    .size(200.dp)
+
+                    .align(alignment = Alignment.Center)
+                    .size(150.dp)
             )
         }
         Box(modifier = Modifier
-            .size(width = 400.dp, height = 300.dp)
+            .size(width = 400.dp, height = 200.dp)
             .align(alignment = Alignment.Center), contentAlignment = Alignment.BottomCenter) {
             Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(12.dp), modifier = Modifier.padding(16.dp)) {
                 Text(
@@ -73,34 +74,34 @@ fun SuccessScreen(modifier: Modifier = Modifier) {
                         fontWeight = FontWeight.Bold
                     )
                 )
-                Text(text = "Your Profile Is Ready To use", textAlign = TextAlign.Center, fontSize = 26.sp, fontWeight = FontWeight.Bold)
+                Text(text = "Your profile is ready to use", textAlign = TextAlign.Center, fontSize = 26.sp, fontWeight = FontWeight.Bold)
             }
-         }
-Box( modifier = Modifier
-    .size(200.dp)
-    .align(alignment = Alignment.BottomCenter)) {
-    Box(
-        contentAlignment = Alignment.Center, modifier = Modifier
-            .clip(shape = RoundedCornerShape(16.dp))
-            .align(alignment = Alignment.Center)
-            .background(
-                brush = Brush.linearGradient(
-                    colors = listOf(
-                        colorResource(id = R.color.light_green),
-                        colorResource(id = R.color.dark_green)
+        }
+        Box( modifier = Modifier
+            .size(200.dp)
+            .align(alignment = Alignment.BottomCenter)) {
+            Box(
+                contentAlignment = Alignment.Center, modifier = Modifier
+                    .clip(shape = RoundedCornerShape(16.dp))
+                    .align(alignment = Alignment.Center)
+                    .background(
+                        brush = Brush.linearGradient(
+                            colors = listOf(
+                                colorResource(id = R.color.light_green),
+                                colorResource(id = R.color.dark_green)
+                            )
+                        )
                     )
+                    .size(width = 150.dp, height = 50.dp)
+            ) {
+                Text(
+                    text = "Create Account", fontWeight = FontWeight.Bold,
+                    fontSize = 20.sp,
+                    style = TextStyle(color = Color.White)
                 )
-            )
-            .size(width = 150.dp, height = 50.dp)
-    ) {
-        Text(
-            text = "Create Account",
-            fontSize = 20.sp,
-            style = TextStyle(color = Color.White)
-        )
 
-    }
-}
+            }
+        }
 
 
     }

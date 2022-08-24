@@ -55,22 +55,21 @@ fun TopHeader(modifier: Modifier = Modifier) {
         verticalAlignment = Alignment.CenterVertically
     ) {
         Text(text = "Find Your \nFavourite Food", fontWeight = FontWeight.Bold, fontSize = 34.sp)
-        Box(
-            contentAlignment = Alignment.Center, modifier = Modifier
-                .clip(shape = RoundedCornerShape(12.dp))
-                .background(color = Color.White)
-                .padding(8.dp)
-                .size(40.dp)
+        Card( shape = RoundedCornerShape(12.dp),
+            elevation = 10.dp, modifier = Modifier
+                .size(50.dp)
         ) {
             Icon(
-                Icons.Outlined.Notifications, modifier = Modifier.size(38.dp), tint = colorResource(
+                Icons.Outlined.Notifications, modifier = Modifier
+                    .padding(2.dp)
+                    .size(48.dp), tint = colorResource(
                     id = R.color.dark_green
                 ), contentDescription = "notification"
             )
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(bottom = 20.dp, start = 16.dp),
+                    .padding(bottom = 18.dp, start = 16.dp, top = 2.dp),
                 horizontalArrangement = Arrangement.Center,
                 verticalAlignment = Alignment.Top
             ) {
@@ -79,7 +78,7 @@ fun TopHeader(modifier: Modifier = Modifier) {
                         .clip(shape = RoundedCornerShape(8.dp))
                         .border(width = 2.dp, color = Color.White, shape = RoundedCornerShape(8.dp))
                         .background(color = Color.Red)
-                        .size(12.dp)
+                        .size(15.dp)
                 ) {
 
                 }
@@ -224,7 +223,9 @@ fun SearchBox(modifier: Modifier = Modifier) {
 
 @Composable
 fun RestaurantContent(modifier: Modifier=Modifier) {
-    Row(modifier = modifier.fillMaxWidth().padding(vertical = 20.dp), horizontalArrangement = Arrangement.SpaceBetween) {
+    Row(modifier = modifier
+        .fillMaxWidth()
+        .padding(vertical = 20.dp), horizontalArrangement = Arrangement.SpaceBetween) {
         Box(modifier = Modifier
             .clip(shape = RoundedCornerShape(12.dp))
             .background(color = Color.White)) {
@@ -252,6 +253,11 @@ fun RestaurantContent(modifier: Modifier=Modifier) {
             }
         }
     }
+}
+
+@Composable
+fun BottomBar() {
+
 }
 
 @Preview
@@ -283,5 +289,13 @@ fun PreviewSearchBox() {
 fun PreviewRestaurantContent() {
     FoodNinjaDeliveryTheme {
         RestaurantContent()
+    }
+}
+
+@Preview
+@Composable
+fun PreviewBottomBar() {
+    FoodNinjaDeliveryTheme {
+        BottomBar()
     }
 }

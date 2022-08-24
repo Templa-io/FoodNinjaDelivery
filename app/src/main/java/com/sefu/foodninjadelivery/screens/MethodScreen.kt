@@ -105,13 +105,13 @@ fun MethodScreen(modifier: Modifier = Modifier) {
                                             Box(
                                                 modifier = Modifier
                                                     .clip(shape = RoundedCornerShape(12.dp))
-                                                    .size(10.dp)
+                                                    .size(8.dp)
                                                     .background(color = Color.Black)
                                             )
                                             Box(
                                                 modifier = Modifier
                                                     .clip(shape = RoundedCornerShape(12.dp))
-                                                    .size(10.dp)
+                                                    .size(8.dp)
                                                     .background(color = Color.Black)
                                             )
 
@@ -119,47 +119,47 @@ fun MethodScreen(modifier: Modifier = Modifier) {
                                             Box(
                                                 modifier = Modifier
                                                     .clip(shape = RoundedCornerShape(12.dp))
-                                                    .size(10.dp)
+                                                    .size(8.dp)
                                                     .background(color = Color.Black)
                                             )
                                             Box(
                                                 modifier = Modifier
                                                     .clip(shape = RoundedCornerShape(12.dp))
-                                                    .size(10.dp)
+                                                    .size(8.dp)
                                                     .background(color = Color.Black)
                                             ) {
 
                                             }
-                                            Spacer(modifier = Modifier.width(10.dp))
+                                            Spacer(modifier = Modifier.width(8.dp))
                                             Box(
                                                 modifier = Modifier
                                                     .clip(shape = RoundedCornerShape(12.dp))
-                                                    .size(10.dp)
+                                                    .size(8.dp)
                                                     .background(color = Color.Black)
                                             )
 
                                             Box(
                                                 modifier = Modifier
                                                     .clip(shape = RoundedCornerShape(12.dp))
-                                                    .size(10.dp)
+                                                    .size(8.dp)
                                                     .background(color = Color.Black)
                                             )
                                             Box(
                                                 modifier = Modifier
                                                     .clip(shape = RoundedCornerShape(12.dp))
-                                                    .size(10.dp)
+                                                    .size(8.dp)
                                                     .background(color = Color.Black)
                                             )
                                             Box(
                                                 modifier = Modifier
                                                     .clip(shape = RoundedCornerShape(12.dp))
-                                                    .size(10.dp)
+                                                    .size(8.dp)
                                                     .background(color = Color.Black)
                                             ) {
 
                                             }
-Spacer(modifier = Modifier.width(12.dp))
-                                            Text(text = "4345", fontSize = 16.sp)
+Spacer(modifier = Modifier.width(8.dp))
+                                            Text(text = "4345", fontSize = 18.sp)
                                         }
                                     }
                                 }
@@ -204,32 +204,32 @@ Spacer(modifier = Modifier.width(12.dp))
                                             Box(
                                                 modifier = Modifier
                                                     .clip(shape = RoundedCornerShape(12.dp))
-                                                    .size(10.dp)
+                                                    .size(8.dp)
                                                     .background(color = Color.Black)
                                             )
                                             Box(
                                                 modifier = Modifier
                                                     .clip(shape = RoundedCornerShape(12.dp))
-                                                    .size(10.dp)
+                                                    .size(8.dp)
                                                     .background(color = Color.Black)
                                             )
                                             Box(
                                                 modifier = Modifier
                                                     .clip(shape = RoundedCornerShape(12.dp))
-                                                    .size(10.dp)
+                                                    .size(8.dp)
                                                     .background(color = Color.Black)
                                             )
 
                                             Box(
                                                 modifier = Modifier
                                                     .clip(shape = RoundedCornerShape(12.dp))
-                                                    .size(10.dp)
+                                                    .size(8.dp)
                                                     .background(color = Color.Black)
                                             ) {
 
                                             }
                                             Spacer(modifier = Modifier.width(10.dp))
-                                            Text(text = "@gmail.com", fontSize = 16.sp)
+                                            Text(text = "@gmail.com", fontSize = 18.sp)
 
                                         }
 

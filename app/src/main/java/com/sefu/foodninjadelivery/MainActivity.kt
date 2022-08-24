@@ -37,7 +37,8 @@ class MainActivity : ComponentActivity() {
 //                LocationScreen()
 //                SuccessScreen()
 //                VerifyScreen()
-                MethodScreen()
+//                MethodScreen()
+//                PasswordContent()
             }
         }
     }

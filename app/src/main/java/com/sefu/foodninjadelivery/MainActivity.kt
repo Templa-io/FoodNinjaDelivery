@@ -39,7 +39,8 @@ class MainActivity : ComponentActivity() {
 //                VerifyScreen()
 //                MethodScreen()
 //                PasswordContent()
-                NotificationScreen()
+//                NotificationScreen()
+                HomeMainScreen()
             }
         }
     }

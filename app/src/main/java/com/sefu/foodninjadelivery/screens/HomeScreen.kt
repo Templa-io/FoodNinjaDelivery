@@ -8,7 +8,10 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Notifications
+import androidx.compose.material.icons.rounded.Home
+import androidx.compose.material.icons.rounded.Person
 import androidx.compose.material.icons.rounded.Search
+import androidx.compose.material.icons.rounded.ShoppingCart
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -40,6 +43,8 @@ fun HomeMainScreen(modifier: Modifier = Modifier) {
             TopHeader()
             SearchBox()
             RestaurantContent()
+            Spacer(modifier = Modifier.height(20.dp))
+            BottomBar()
         }
     }
 
@@ -55,7 +60,8 @@ fun TopHeader(modifier: Modifier = Modifier) {
         verticalAlignment = Alignment.CenterVertically
     ) {
         Text(text = "Find Your \nFavourite Food", fontWeight = FontWeight.Bold, fontSize = 34.sp)
-        Card( shape = RoundedCornerShape(12.dp),
+        Card(
+            shape = RoundedCornerShape(12.dp),
             elevation = 10.dp, modifier = Modifier
                 .size(50.dp)
         ) {
@@ -102,7 +108,7 @@ fun SearchBox(modifier: Modifier = Modifier) {
             Box(
                 modifier = modifier
                     .clip(shape = RoundedCornerShape(12.dp))
-                    .width(280.dp)
+                    .width(250.dp)
                     .height(50.dp)
                     .background(colorResource(id = R.color.Light_baige).copy(0.1f))
             ) {
@@ -222,14 +228,22 @@ fun SearchBox(modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun RestaurantContent(modifier: Modifier=Modifier) {
-    Row(modifier = modifier
-        .fillMaxWidth()
-        .padding(vertical = 20.dp), horizontalArrangement = Arrangement.SpaceBetween) {
-        Box(modifier = Modifier
-            .clip(shape = RoundedCornerShape(12.dp))
-            .background(color = Color.White)) {
-            Column(modifier = Modifier.padding(24.dp), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(4.dp)) {
+fun RestaurantContent(modifier: Modifier = Modifier) {
+    Row(
+        modifier = modifier
+            .fillMaxWidth()
+            .padding(vertical = 20.dp), horizontalArrangement = Arrangement.SpaceBetween
+    ) {
+        Box(
+            modifier = Modifier
+                .clip(shape = RoundedCornerShape(12.dp))
+                .background(color = Color.White)
+        ) {
+            Column(
+                modifier = Modifier.padding(24.dp),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.spacedBy(4.dp)
+            ) {
                 Image(
                     painter = painterResource(id = R.drawable.res),
                     contentDescription = "restaurant",
@@ -239,10 +253,16 @@ fun RestaurantContent(modifier: Modifier=Modifier) {
                 Text(text = "12 Mins", style = TextStyle(color = Color.Gray))
             }
         }
-        Box(modifier = Modifier
-            .clip(shape = RoundedCornerShape(12.dp))
-            .background(color = Color.White)) {
-            Column(modifier = Modifier.padding(24.dp), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(4.dp)) {
+        Box(
+            modifier = Modifier
+                .clip(shape = RoundedCornerShape(12.dp))
+                .background(color = Color.White)
+        ) {
+            Column(
+                modifier = Modifier.padding(24.dp),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.spacedBy(4.dp)
+            ) {
                 Image(
                     painter = painterResource(id = R.drawable.img),
                     contentDescription = "restaurant",
@@ -256,8 +276,126 @@ fun RestaurantContent(modifier: Modifier=Modifier) {
 }
 
 @Composable
-fun BottomBar() {
+fun BottomBar(modifier: Modifier = Modifier) {
+    Box(
+        contentAlignment = Alignment.Center,
+        modifier = modifier
+            .clip(shape = RoundedCornerShape(12.dp))
+            .fillMaxWidth()
+            .height(80.dp)
+            .background(color = Color.White)
+    ) {
+        Row(
+            horizontalArrangement = Arrangement.SpaceEvenly,
+            verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier
+                .padding(8.dp)
+                .fillMaxWidth()
+        ) {
 
+            Box(
+                contentAlignment = Alignment.Center, modifier = Modifier
+                    .clip(shape = RoundedCornerShape(12.dp))
+
+                    .background(colorResource(id = R.color.light_green).copy(0.3f))
+            ) {
+
+                Row(
+                    horizontalArrangement = Arrangement.spacedBy(12.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = Modifier.padding(vertical = 6.dp, horizontal = 12.dp)
+                ) {
+                    IconButton(onClick = { /*TODO*/ }) {
+                        Icon(
+                            Icons.Rounded.Home,
+                            contentDescription = "", tint = colorResource(id = R.color.dark_green),
+                            modifier = Modifier.size(40.dp)
+                        )
+
+                    }
+                    Text(text = "Home", fontSize = 16.sp, fontWeight = FontWeight.Bold)
+                }
+            }
+            Icon(
+                Icons.Rounded.Person,
+                contentDescription = "person",
+                modifier = Modifier.size(28.dp),
+                tint = colorResource(
+                    id = R.color.light_green
+                )
+            )
+            Box(contentAlignment = Alignment.Center, modifier = Modifier.size(50.dp)) {
+                IconButton(onClick = { /*TODO*/ }) {
+                    Icon(
+                        Icons.Rounded.ShoppingCart,
+                        contentDescription = "Cart",
+                        modifier = Modifier.size(28.dp),
+                        tint = colorResource(
+                            id = R.color.light_green
+                        )
+                    )
+                }
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(bottom = 18.dp, start = 16.dp, top = 2.dp),
+                    horizontalArrangement = Arrangement.Center,
+                    verticalAlignment = Alignment.Top
+                ) {
+                    Box(
+                        contentAlignment = Alignment.Center,
+                        modifier = Modifier
+                            .clip(shape = RoundedCornerShape(8.dp))
+                            .border(
+                                width = 2.dp,
+                                color = Color.White,
+                                shape = RoundedCornerShape(8.dp)
+                            )
+                            .background(color = Color.Red)
+                            .size(18.dp)
+                    ) {
+                        Text(text = "7", style = TextStyle(color = Color.White))
+                    }
+                }
+
+            }
+            Box(contentAlignment = Alignment.Center, modifier = Modifier.size(50.dp)) {
+                IconButton(onClick = { /*TODO*/ }) {
+                    Icon(
+                        painterResource(id = R.drawable.sms),
+                        modifier = Modifier.size(24.dp),
+                        contentDescription = "Cart",
+                        tint = colorResource(
+                            id = R.color.light_green
+                        )
+                    )
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(bottom = 18.dp, start = 16.dp, top = 2.dp),
+                        horizontalArrangement = Arrangement.Center,
+                        verticalAlignment = Alignment.Top
+                    ) {
+                        Box(
+                            modifier = Modifier
+                                .clip(shape = RoundedCornerShape(8.dp))
+                                .border(
+                                    width = 2.dp,
+                                    color = Color.White,
+                                    shape = RoundedCornerShape(8.dp)
+                                )
+                                .background(color = Color.Red)
+                                .size(17.dp)
+                        ) {
+
+                        }
+                    }
+                }
+
+            }
+
+        }
+    }
 }
 
 @Preview

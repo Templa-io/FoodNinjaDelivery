@@ -155,12 +155,7 @@ fun TopMenu(modifier: Modifier = Modifier) {
                 }
             }
         }
-    }
-}
-
-@Composable
-fun MenuContent(modifier: Modifier = Modifier) {
-    Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
+        Spacer(modifier = Modifier.height(12.dp))
         Box(
             contentAlignment = Alignment.Center, modifier = Modifier
                 .clip(shape = RoundedCornerShape(12.dp))
@@ -182,6 +177,13 @@ fun MenuContent(modifier: Modifier = Modifier) {
                 )
             }
         }
+    }
+}
+
+@Composable
+fun MenuContent(modifier: Modifier = Modifier) {
+    Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
+
         Text(text = "Popular Menu", fontWeight = FontWeight.Bold, fontSize = 24.sp)
         Box(
             modifier = Modifier

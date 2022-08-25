@@ -17,6 +17,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.sefu.foodninjadelivery.screens.CallingMuteScreen
 import com.sefu.foodninjadelivery.screens.CallingScreen
 import com.sefu.foodninjadelivery.screens.ChatScreen
 import com.sefu.foodninjadelivery.screens.MessageScreen
@@ -54,6 +55,7 @@ class MainActivity : ComponentActivity() {
                 MessageScreen()
                 ChatScreen()
                 CallingScreen()
+                CallingMuteScreen()
 
             }
         }

@@ -3,13 +3,18 @@ package com.sefu.foodninjadelivery.screens
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Icon
+import androidx.compose.material.IconButton
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -55,7 +60,12 @@ fun CallingScreen(modifier: Modifier = Modifier) {
         ) {
 
         }
-        CallingContent()
+        Column(verticalArrangement = Arrangement.SpaceBetween) {
+            CallingContent()
+            Spacer(modifier = Modifier.height(32.dp))
+            CallingButtons()
+        }
+
     }
 }
 
@@ -65,6 +75,7 @@ fun CallingContent(modifier: Modifier = Modifier) {
         Box(
             modifier = Modifier
                 .height(500.dp)
+                .padding(24.dp)
                 .fillMaxWidth(),
             contentAlignment = Alignment.BottomCenter
         ) {
@@ -75,7 +86,9 @@ fun CallingContent(modifier: Modifier = Modifier) {
 
                 Image(
                     painter = painterResource(id = R.drawable.calling),
-                    modifier = Modifier.size(200.dp),
+                    modifier = Modifier
+                        .padding(bottom = 24.dp)
+                        .size(150.dp),
                     contentDescription = ""
                 )
 
@@ -96,6 +109,36 @@ fun CallingContent(modifier: Modifier = Modifier) {
     }
 }
 
+@Composable
+fun CallingButtons(modifier: Modifier = Modifier) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(top = 50.dp), horizontalArrangement = Arrangement.Center, verticalAlignment = Alignment.CenterVertically
+    ) {
+        Box(contentAlignment = Alignment.Center,
+            modifier = Modifier
+                .clip(shape = RoundedCornerShape(60.dp))
+                .size(50.dp)
+                .background(colorResource(id = R.color.light_green).copy(0.1f))
+        ) {
+            IconButton(onClick = { /*TODO*/ }) {
+                Row(modifier = Modifier.padding(8.dp)) {
+                    Icon(
+                        painterResource(id = R.drawable.vup),
+                        tint = colorResource(id = R.color.dark_green),
+                        contentDescription = "",modifier = Modifier.size(40.dp)
+                    )
+                }
+
+            }
+        }
+        Spacer(modifier = Modifier.width(16.dp))
+
+        Image(painter = painterResource(id = R.drawable.cico), contentDescription ="action Button", modifier = Modifier.size(60.dp) )
+        }
+}
+
 @Preview
 @Composable
 fun PreviewCallingScreen() {
@@ -109,5 +152,13 @@ fun PreviewCallingScreen() {
 fun PreviewCallingContent() {
     FoodNinjaDeliveryTheme {
         CallingContent()
+    }
+}
+
+@Preview
+@Composable
+fun PreviewCallingButtons() {
+    FoodNinjaDeliveryTheme {
+        CallingButtons()
     }
 }

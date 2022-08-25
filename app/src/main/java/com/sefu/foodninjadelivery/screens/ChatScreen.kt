@@ -62,7 +62,7 @@ fun ChatScreen(modifier: Modifier = Modifier) {
             TopBoxButton()
             ChatContent()
             TextContent()
-            Spacer(modifier = Modifier.height(150.dp))
+            Spacer(modifier = Modifier.height(50.dp))
             MessageTextField()
         }
 
@@ -100,7 +100,7 @@ fun ChatContent(modifier: Modifier = Modifier) {
 
 
                         Text(
-                            text = "Dqaniel Russel",
+                            text = "Daniel Russel",
                             fontSize = 16.sp,
 
                             )
@@ -196,7 +196,7 @@ fun TextContent(modifier: Modifier = Modifier) {
                         .clip(shape = RoundedCornerShape(12.dp))
                         .background(colorResource(id = R.color.background))
                 ) {
-                    Row(modifier = Modifier.padding(12.dp), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                    Row(modifier = Modifier.padding(12.dp), horizontalArrangement = Arrangement.spacedBy(8.dp), verticalAlignment = Alignment.CenterVertically) {
                         Text(text = "Okay, wait a minute", fontSize = 16.sp)
                         Icon(
                             Icons.Rounded.ThumbUp,

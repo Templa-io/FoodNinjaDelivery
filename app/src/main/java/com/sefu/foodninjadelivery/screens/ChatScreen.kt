@@ -4,10 +4,12 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Card
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.Send
 import androidx.compose.material.icons.rounded.Call
 import androidx.compose.material.icons.rounded.ThumbUp
 import androidx.compose.runtime.Composable
@@ -56,6 +58,14 @@ fun ChatScreen(modifier: Modifier = Modifier) {
                     )
                 )
         ) {}
+        Column (verticalArrangement = Arrangement.spacedBy(24.dp),modifier = Modifier.padding(horizontal = 16.dp, vertical = 24.dp)){
+            TopBoxButton()
+            ChatContent()
+            TextContent()
+            Spacer(modifier = Modifier.height(150.dp))
+            MessageTextField()
+        }
+
     }
 }
 
@@ -73,7 +83,7 @@ fun ChatContent(modifier: Modifier = Modifier) {
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(horizontal = 8.dp, vertical = 24.dp),
+                    .padding(horizontal = 8.dp, vertical = 14.dp),
                 horizontalArrangement = Arrangement.SpaceBetween,
                 verticalAlignment = Alignment.CenterVertically
             ) {
@@ -143,7 +153,7 @@ fun ChatContent(modifier: Modifier = Modifier) {
 fun TextContent(modifier: Modifier = Modifier) {
 
 
-    Box(modifier = Modifier.size(width = 400.dp, height = 300.dp)) {
+    Box(modifier = Modifier.size(width = 400.dp, height = 250.dp)) {
         Column(verticalArrangement = Arrangement.SpaceBetween, modifier = Modifier.fillMaxSize()) {
             Row(modifier = Modifier.fillMaxWidth()) {
                 Box(
@@ -243,6 +253,43 @@ fun TextContent(modifier: Modifier = Modifier) {
     }
 }
 
+@Composable
+fun MessageTextField(modifier: Modifier=Modifier) {
+    Card(shape = RoundedCornerShape(12.dp),
+        elevation = 10.dp,
+        modifier = Modifier
+
+            .fillMaxWidth()
+
+    ) {
+        Row(modifier = Modifier
+            .fillMaxWidth()
+            .background(colorResource(id = R.color.background))
+            .padding(24.dp), horizontalArrangement = Arrangement.SpaceBetween) {
+            Box(contentAlignment = Alignment.Center,modifier = Modifier.size(width = 200.dp, height = 40.dp)) {
+                Row(modifier = Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
+                    Text(text = "Okay, I'm waiting ", fontSize = 16.sp)
+                    Icon(
+                        Icons.Rounded.ThumbUp,
+                        contentDescription = "thumb Up",
+                        tint = colorResource(
+                            id = R.color.light_yellow
+                        )
+                    )
+                }
+
+            }
+
+            Box(modifier = Modifier.size(30.dp), contentAlignment = Alignment.Center) {
+                IconButton(onClick = { /*TODO*/ }) {
+                    Icon(Icons.Outlined.Send, tint = colorResource(id = R.color.dark_green), contentDescription ="" )
+                }
+            }
+        }
+
+    }
+}
+
 
 @Preview
 @Composable
@@ -265,5 +312,13 @@ fun PreviewChatContent() {
 fun PreviewTextContent() {
     FoodNinjaDeliveryTheme {
         TextContent()
+    }
+}
+
+@Preview
+@Composable
+fun PreviewMessageTextField() {
+    FoodNinjaDeliveryTheme {
+        MessageTextField()
     }
 }

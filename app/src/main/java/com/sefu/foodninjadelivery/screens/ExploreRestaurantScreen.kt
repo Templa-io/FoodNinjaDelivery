@@ -183,7 +183,7 @@ fun TopRestaurantContent(modifier: Modifier=Modifier) {
                     Image(
                         painter = painterResource(id = R.drawable.res),
                         contentDescription = "restaurant",
-                        modifier = Modifier.size(100.dp)
+                        modifier = Modifier.size(80.dp)
                     )
                     Text(text = "Vegan Resto", fontSize = 20.sp, fontWeight = FontWeight.Bold)
                     Text(text = "12 Mins", style = TextStyle(color = Color.Gray))
@@ -202,14 +202,14 @@ fun TopRestaurantContent(modifier: Modifier=Modifier) {
                     Image(
                         painter = painterResource(id = R.drawable.img),
                         contentDescription = "restaurant",
-                        modifier = Modifier.size(100.dp)
+                        modifier = Modifier.size(80.dp)
                     )
                     Text(text = "Healthy Food", fontSize = 20.sp, fontWeight = FontWeight.Bold)
                     Text(text = "8 Mins", style = TextStyle(color = Color.Gray))
                 }
             }
         }
-        Spacer(modifier = Modifier.height(160.dp))
+        Spacer(modifier = Modifier.height(100.dp))
         Box(
             contentAlignment = Alignment.Center,
             modifier = modifier

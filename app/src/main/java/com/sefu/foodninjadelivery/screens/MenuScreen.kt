@@ -39,6 +39,7 @@ fun MenuScreen(modifier: Modifier = Modifier) {
         ) {
             TopMenu()
             MenuContent()
+           BottomBar()
         }
     }
 }
@@ -159,7 +160,7 @@ fun TopMenu(modifier: Modifier = Modifier) {
 
 @Composable
 fun MenuContent(modifier: Modifier = Modifier) {
-    Column(verticalArrangement = Arrangement.spacedBy(16.dp)) {
+    Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
         Box(
             contentAlignment = Alignment.Center, modifier = Modifier
                 .clip(shape = RoundedCornerShape(12.dp))
@@ -197,11 +198,11 @@ fun MenuContent(modifier: Modifier = Modifier) {
             ) {
                 Image(
                     painter = painterResource(id = R.drawable.pancakes),
-                    modifier = Modifier.size(100.dp),
+                    modifier = Modifier.size(60.dp),
                     contentDescription = "pancakes"
                 )
                 Box(
-                    modifier = Modifier.size(width = 180.dp, height = 100.dp),
+                    modifier = Modifier.size(width = 180.dp, height = 80.dp),
                     contentAlignment = Alignment.CenterStart
                 ) {
                     Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
@@ -209,18 +210,18 @@ fun MenuContent(modifier: Modifier = Modifier) {
 
                         Text(
                             text = "Herbal Pancakes",
-                            fontSize = 20.sp,
+                            fontSize = 16.sp,
                             fontWeight = FontWeight.Bold
                         )
                         Text(
                             text = "Warung Herbal",
-                            fontSize = 20.sp,
+                            fontSize = 16.sp,
                             style = TextStyle(color = Color.Gray)
                         )
                     }
                 }
                 Text(
-                    text = "$7", fontWeight = FontWeight.Bold, fontSize = 30.sp, style = TextStyle(
+                    text = "$7", fontWeight = FontWeight.Bold, fontSize = 25.sp, style = TextStyle(
                         colorResource(id = R.color.baige)
                     )
                 )
@@ -241,11 +242,11 @@ fun MenuContent(modifier: Modifier = Modifier) {
             ) {
                 Image(
                     painter = painterResource(id = R.drawable.salad),
-                    modifier = Modifier.size(100.dp),
+                    modifier = Modifier.size(80.dp),
                     contentDescription = "salad"
                 )
                 Box(
-                    modifier = Modifier.size(width = 150.dp, height = 100.dp),
+                    modifier = Modifier.size(width = 150.dp, height = 80.dp),
                     contentAlignment = Alignment.CenterStart
                 ) {
                     Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
@@ -253,18 +254,18 @@ fun MenuContent(modifier: Modifier = Modifier) {
 
                         Text(
                             text = "Fruit Salad",
-                            fontSize = 20.sp,
+                            fontSize = 16.sp,
                             fontWeight = FontWeight.Bold
                         )
                         Text(
                             text = "Wijji Resto",
-                            fontSize = 20.sp,
+                            fontSize = 16.sp,
                             style = TextStyle(color = Color.Gray)
                         )
                     }
                 }
                 Text(
-                    text = "$5", fontWeight = FontWeight.Bold, fontSize = 30.sp, style = TextStyle(
+                    text = "$5", fontWeight = FontWeight.Bold, fontSize = 25.sp, style = TextStyle(
                         colorResource(id = R.color.baige)
                     )
                 )
@@ -285,11 +286,11 @@ fun MenuContent(modifier: Modifier = Modifier) {
             ) {
                 Image(
                     painter = painterResource(id = R.drawable.nodles),
-                    modifier = Modifier.size(100.dp),
+                    modifier = Modifier.size(80.dp),
                     contentDescription = "noddles"
                 )
                 Box(
-                    modifier = Modifier.size(width = 150.dp, height = 100.dp),
+                    modifier = Modifier.size(width = 150.dp, height = 70.dp),
                     contentAlignment = Alignment.CenterStart
                 ) {
                     Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
@@ -297,18 +298,18 @@ fun MenuContent(modifier: Modifier = Modifier) {
 
                         Text(
                             text = "Green Noddle",
-                            fontSize = 20.sp,
+                            fontSize = 16.sp,
                             fontWeight = FontWeight.Bold
                         )
                         Text(
                             text = "Noddle Home",
-                            fontSize = 20.sp,
+                            fontSize = 16.sp,
                             style = TextStyle(color = Color.Gray)
                         )
                     }
                 }
                 Text(
-                    text = "$15", fontWeight = FontWeight.Bold, fontSize = 30.sp, style = TextStyle(
+                    text = "$15", fontWeight = FontWeight.Bold, fontSize = 25.sp, style = TextStyle(
                         colorResource(id = R.color.baige)
                     )
                 )
@@ -316,6 +317,7 @@ fun MenuContent(modifier: Modifier = Modifier) {
         }
     }
 }
+
 
 @Preview
 @Composable

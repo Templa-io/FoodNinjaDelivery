@@ -42,7 +42,8 @@ class MainActivity : ComponentActivity() {
 //                NotificationScreen()
 //                HomeMainScreen()
 //                ExploreRestaurantScreen()
-                FilterScreen()
+//                FilterScreen()
+                MenuScreen()
             }
         }
     }

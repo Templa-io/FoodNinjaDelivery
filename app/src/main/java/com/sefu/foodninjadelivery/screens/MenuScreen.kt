@@ -218,7 +218,7 @@ fun MenuContent(modifier: Modifier = Modifier) {
                         Text(
                             text = "Warung Herbal",
                             fontSize = 16.sp,
-                            style = TextStyle(color = Color.Gray)
+                            style = TextStyle(color = Color.LightGray)
                         )
                     }
                 }
@@ -262,7 +262,7 @@ fun MenuContent(modifier: Modifier = Modifier) {
                         Text(
                             text = "Wijji Resto",
                             fontSize = 16.sp,
-                            style = TextStyle(color = Color.Gray)
+                            style = TextStyle(color = Color.LightGray)
                         )
                     }
                 }
@@ -306,7 +306,7 @@ fun MenuContent(modifier: Modifier = Modifier) {
                         Text(
                             text = "Noddle Home",
                             fontSize = 16.sp,
-                            style = TextStyle(color = Color.Gray)
+                            style = TextStyle(color = Color.LightGray)
                         )
                     }
                 }

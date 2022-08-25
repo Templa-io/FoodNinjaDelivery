@@ -43,9 +43,11 @@ class MainActivity : ComponentActivity() {
 //                HomeMainScreen()
 //                ExploreRestaurantScreen()
 //                FilterScreen()
-//                MenuScreen()
 //                RestaurantFilterScreen()
-                FoodFilterScreen()
+            //                FoodFilterScreen()
+//
+            //                MenuScreen()
+
             }
         }
     }

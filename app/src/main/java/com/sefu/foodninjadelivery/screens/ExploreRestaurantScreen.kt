@@ -278,7 +278,7 @@ fun TopRestaurantContent(modifier: Modifier=Modifier) {
                         Box(
                             contentAlignment = Alignment.Center,
                             modifier = Modifier
-                                .clip(shape = RoundedCornerShape(8.dp))
+                                .clip(shape = RoundedCornerShape(10.dp))
                                 .border(
                                     width = 2.dp,
                                     color = Color.White,

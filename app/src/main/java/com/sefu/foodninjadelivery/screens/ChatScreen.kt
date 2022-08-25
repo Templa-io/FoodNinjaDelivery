@@ -9,6 +9,7 @@ import androidx.compose.material.IconButton
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Call
+import androidx.compose.material.icons.rounded.ThumbUp
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -123,13 +124,122 @@ fun ChatContent(modifier: Modifier = Modifier) {
                 ) {
                     Box(modifier = Modifier.size(50.dp), contentAlignment = Alignment.TopCenter) {
                         IconButton(onClick = { /*TODO*/ }) {
-                            Icon(Icons.Rounded.Call, contentDescription ="", modifier = Modifier.size(30.dp), tint = colorResource(id = R.color.dark_green) )
+                            Icon(
+                                Icons.Rounded.Call,
+                                contentDescription = "",
+                                modifier = Modifier.size(30.dp),
+                                tint = colorResource(id = R.color.dark_green)
+                            )
                         }
                     }
                 }
             }
         }
 
+    }
+}
+
+@Composable
+fun TextContent(modifier: Modifier = Modifier) {
+
+
+    Box(modifier = Modifier.size(width = 400.dp, height = 300.dp)) {
+        Column(verticalArrangement = Arrangement.SpaceBetween, modifier = Modifier.fillMaxSize()) {
+            Row(modifier = Modifier.fillMaxWidth()) {
+                Box(
+                    modifier = Modifier
+                        .clip(shape = RoundedCornerShape(12.dp))
+                        .background(colorResource(id = R.color.background))
+                ) {
+                    Row(modifier = Modifier.padding(12.dp)) {
+                        Text(text = "Just to order", fontSize = 16.sp)
+                    }
+
+                }
+            }
+            Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.End) {
+                Box(
+                    modifier = Modifier
+                        .clip(shape = RoundedCornerShape(12.dp))
+                        .background(
+                            brush = Brush.linearGradient(
+                                colors = listOf(
+                                    colorResource(id = R.color.light_green),
+                                    colorResource(id = R.color.dark_green)
+                                )
+                            )
+                        )
+                ) {
+                    Row(modifier = Modifier.padding(12.dp)) {
+                        Text(
+                            text = "Okay,for what level of spiciness?",
+                            style = TextStyle(color = Color.White),
+                            fontSize = 16.sp
+                        )
+                    }
+
+                }
+            }
+            Row(modifier = Modifier.fillMaxWidth()) {
+                Box(
+                    modifier = Modifier
+                        .clip(shape = RoundedCornerShape(12.dp))
+                        .background(colorResource(id = R.color.background))
+                ) {
+                    Row(modifier = Modifier.padding(12.dp), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                        Text(text = "Okay, wait a minute", fontSize = 16.sp)
+                        Icon(
+                            Icons.Rounded.ThumbUp,
+                            contentDescription = "thumb Up",
+                            tint = colorResource(
+                                id = R.color.light_yellow
+                            )
+                        )
+                    }
+
+                }
+            }
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.End
+            ) {
+                Box(
+                    modifier = Modifier
+                        .clip(shape = RoundedCornerShape(12.dp))
+                        .background(
+                            brush = Brush.linearGradient(
+                                colors = listOf(
+                                    colorResource(id = R.color.light_green),
+                                    colorResource(id = R.color.dark_green)
+                                )
+                            )
+                        )
+                ) {
+                    Row(
+                        modifier = Modifier.padding(12.dp),
+                        verticalAlignment = Alignment.CenterVertically,
+
+                        ) {
+                        Row(
+                            horizontalArrangement = Arrangement.spacedBy(8.dp),
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            Text(text = "Okay,I'm waiting", fontSize = 16.sp, style = TextStyle(color = Color.White))
+                            Icon(
+                                Icons.Rounded.ThumbUp,
+                                contentDescription = "thumb Up",
+                                tint = colorResource(
+                                    id = R.color.light_yellow
+                                )
+                            )
+                        }
+
+                    }
+
+                }
+            }
+        }
     }
 }
 
@@ -147,5 +257,13 @@ fun PreviewChatScreen() {
 fun PreviewChatContent() {
     FoodNinjaDeliveryTheme {
         ChatContent()
+    }
+}
+
+@Preview
+@Composable
+fun PreviewTextContent() {
+    FoodNinjaDeliveryTheme {
+        TextContent()
     }
 }

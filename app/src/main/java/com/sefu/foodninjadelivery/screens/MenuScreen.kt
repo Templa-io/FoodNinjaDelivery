@@ -1,5 +1,6 @@
 package com.sefu.foodninjadelivery.screens
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
@@ -24,24 +25,26 @@ import com.sefu.foodninjadelivery.R
 import com.sefu.foodninjadelivery.ui.theme.FoodNinjaDeliveryTheme
 
 @Composable
-fun MenuScreen(modifier: Modifier=Modifier) {
+fun MenuScreen(modifier: Modifier = Modifier) {
     Box(
         modifier = modifier
             .fillMaxSize()
             .background(colorResource(id = R.color.background))
     ) {
-        Column(verticalArrangement = Arrangement.spacedBy(24.dp),
+        Column(
+            verticalArrangement = Arrangement.spacedBy(24.dp),
             modifier = modifier
                 .fillMaxSize()
                 .padding(24.dp)
         ) {
-TopMenu()
+            TopMenu()
+            MenuContent()
         }
     }
 }
 
 @Composable
-fun TopMenu(modifier: Modifier=Modifier) {
+fun TopMenu(modifier: Modifier = Modifier) {
     Column() {
 
 
@@ -154,6 +157,166 @@ fun TopMenu(modifier: Modifier=Modifier) {
     }
 }
 
+@Composable
+fun MenuContent(modifier: Modifier = Modifier) {
+    Column(verticalArrangement = Arrangement.spacedBy(16.dp)) {
+        Box(
+            contentAlignment = Alignment.Center, modifier = Modifier
+                .clip(shape = RoundedCornerShape(12.dp))
+
+                .background(colorResource(id = R.color.newcolor).copy(0.1f))
+        ) {
+
+            Row(
+                horizontalArrangement = Arrangement.spacedBy(12.dp),
+                verticalAlignment = Alignment.CenterVertically,
+                modifier = Modifier.padding(vertical = 16.dp, horizontal = 24.dp)
+            ) {
+
+                Text(
+                    text = "Soup x",
+                    fontSize = 16.sp,
+                    style = TextStyle(colorResource(id = R.color.baige)),
+                    fontWeight = FontWeight.Bold
+                )
+            }
+        }
+        Text(text = "Popular Menu", fontWeight = FontWeight.Bold, fontSize = 24.sp)
+        Box(
+            modifier = Modifier
+                .clip(shape = RoundedCornerShape(12.dp))
+                .fillMaxWidth()
+                .background(color = Color.White)
+        ) {
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(8.dp),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Image(
+                    painter = painterResource(id = R.drawable.pancakes),
+                    modifier = Modifier.size(100.dp),
+                    contentDescription = "pancakes"
+                )
+                Box(
+                    modifier = Modifier.size(width = 180.dp, height = 100.dp),
+                    contentAlignment = Alignment.CenterStart
+                ) {
+                    Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
+
+
+                        Text(
+                            text = "Herbal Pancakes",
+                            fontSize = 20.sp,
+                            fontWeight = FontWeight.Bold
+                        )
+                        Text(
+                            text = "Warung Herbal",
+                            fontSize = 20.sp,
+                            style = TextStyle(color = Color.Gray)
+                        )
+                    }
+                }
+                Text(
+                    text = "$7", fontWeight = FontWeight.Bold, fontSize = 30.sp, style = TextStyle(
+                        colorResource(id = R.color.baige)
+                    )
+                )
+            }
+        }
+        Box(
+            modifier = Modifier
+                .clip(shape = RoundedCornerShape(12.dp))
+                .fillMaxWidth()
+                .background(color = Color.White)
+        ) {
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(8.dp),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Image(
+                    painter = painterResource(id = R.drawable.salad),
+                    modifier = Modifier.size(100.dp),
+                    contentDescription = "salad"
+                )
+                Box(
+                    modifier = Modifier.size(width = 150.dp, height = 100.dp),
+                    contentAlignment = Alignment.CenterStart
+                ) {
+                    Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
+
+
+                        Text(
+                            text = "Fruit Salad",
+                            fontSize = 20.sp,
+                            fontWeight = FontWeight.Bold
+                        )
+                        Text(
+                            text = "Wijji Resto",
+                            fontSize = 20.sp,
+                            style = TextStyle(color = Color.Gray)
+                        )
+                    }
+                }
+                Text(
+                    text = "$5", fontWeight = FontWeight.Bold, fontSize = 30.sp, style = TextStyle(
+                        colorResource(id = R.color.baige)
+                    )
+                )
+            }
+        }
+        Box(
+            modifier = Modifier
+                .clip(shape = RoundedCornerShape(12.dp))
+                .fillMaxWidth()
+                .background(color = Color.White)
+        ) {
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(8.dp),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Image(
+                    painter = painterResource(id = R.drawable.nodles),
+                    modifier = Modifier.size(100.dp),
+                    contentDescription = "noddles"
+                )
+                Box(
+                    modifier = Modifier.size(width = 150.dp, height = 100.dp),
+                    contentAlignment = Alignment.CenterStart
+                ) {
+                    Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
+
+
+                        Text(
+                            text = "Green Noddle",
+                            fontSize = 20.sp,
+                            fontWeight = FontWeight.Bold
+                        )
+                        Text(
+                            text = "Noddle Home",
+                            fontSize = 20.sp,
+                            style = TextStyle(color = Color.Gray)
+                        )
+                    }
+                }
+                Text(
+                    text = "$15", fontWeight = FontWeight.Bold, fontSize = 30.sp, style = TextStyle(
+                        colorResource(id = R.color.baige)
+                    )
+                )
+            }
+        }
+    }
+}
+
 @Preview
 @Composable
 fun PreviewMenuScreen() {
@@ -167,5 +330,13 @@ fun PreviewMenuScreen() {
 fun PreviewTopMenu() {
     FoodNinjaDeliveryTheme {
         TopMenu()
+    }
+}
+
+@Preview
+@Composable
+fun PreviewMenuContent() {
+    FoodNinjaDeliveryTheme {
+        MenuContent()
     }
 }

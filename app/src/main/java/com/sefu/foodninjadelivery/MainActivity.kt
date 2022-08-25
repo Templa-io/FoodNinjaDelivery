@@ -5,7 +5,9 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.size
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -15,7 +17,8 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.sefu.foodninjadelivery.screens.*
+import com.sefu.foodninjadelivery.screens.ChatScreen
+import com.sefu.foodninjadelivery.screens.MessageScreen
 import com.sefu.foodninjadelivery.ui.theme.FoodNinjaDeliveryTheme
 
 class MainActivity : ComponentActivity() {
@@ -44,9 +47,11 @@ class MainActivity : ComponentActivity() {
 //                ExploreRestaurantScreen()
 //                FilterScreen()
 //                RestaurantFilterScreen()
-            //                FoodFilterScreen()
+                //                FoodFilterScreen()
 //
-            //                MenuScreen()
+                //                MenuScreen()
+                MessageScreen()
+                ChatScreen()
 
             }
         }

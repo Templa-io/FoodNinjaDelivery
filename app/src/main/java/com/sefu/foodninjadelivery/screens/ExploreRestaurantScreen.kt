@@ -40,6 +40,7 @@ fun ExploreRestaurantScreen(modifier: Modifier = Modifier) {
                 .padding(24.dp)
         ) {
             TopContent()
+            Spacer(modifier = Modifier.height(24.dp))
             TopRestaurantContent()
 
         }
@@ -162,12 +163,12 @@ fun TopContent(modifier: Modifier = Modifier) {
 
 @Composable
 fun TopRestaurantContent(modifier: Modifier=Modifier) {
-    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+    Column(verticalArrangement = Arrangement.spacedBy(28.dp)) {
         Text(text = "Popular Restaurants", fontWeight = FontWeight.Bold, fontSize = 24.sp)
         Row(
             modifier = modifier
                 .fillMaxWidth()
-                .padding(vertical = 20.dp), horizontalArrangement = Arrangement.SpaceBetween
+                .padding(), horizontalArrangement = Arrangement.SpaceBetween
         ) {
             Box(
                 modifier = Modifier
@@ -175,7 +176,7 @@ fun TopRestaurantContent(modifier: Modifier=Modifier) {
                     .background(color = Color.White)
             ) {
                 Column(
-                    modifier = Modifier.padding(24.dp),
+                    modifier = Modifier.padding(20.dp),
                     horizontalAlignment = Alignment.CenterHorizontally,
                     verticalArrangement = Arrangement.spacedBy(4.dp)
                 ) {
@@ -194,7 +195,7 @@ fun TopRestaurantContent(modifier: Modifier=Modifier) {
                     .background(color = Color.White)
             ) {
                 Column(
-                    modifier = Modifier.padding(24.dp),
+                    modifier = Modifier.padding(20.dp),
                     horizontalAlignment = Alignment.CenterHorizontally,
                     verticalArrangement = Arrangement.spacedBy(4.dp)
                 ) {
@@ -218,7 +219,7 @@ fun TopRestaurantContent(modifier: Modifier=Modifier) {
                 .background(color = Color.White)
         ) {
             Row(
-                horizontalArrangement = Arrangement.SpaceEvenly,
+                horizontalArrangement = Arrangement.SpaceAround,
                 verticalAlignment = Alignment.CenterVertically,
                 modifier = Modifier
                     .padding(8.dp)
